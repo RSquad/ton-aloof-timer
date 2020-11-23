@@ -1,0 +1,11 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:aloof": "./solc Aloof.sol && ./tvm_linker compile Aloof.code --lib ./stdlib_sol.tvm -o Aloof.tvc",
+    "compile:timer-client": "./solc TimerClient.sol && ./tvm_linker compile TimerClient.code --lib ./stdlib_sol.tvm -o TimerClient.tvc",
+    "compile": "npm run compile:aloof && npm run compile:timer-client"
+  }
+}

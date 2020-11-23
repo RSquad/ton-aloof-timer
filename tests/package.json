@@ -1,0 +1,29 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cp:giver": "cp ./_pkgs/Giver.pkg.ts ./pkgs",
+    "cp:multisig": "cp ./_pkgs/Multisig.pkg.ts ./pkgs",
+    "build:pkgs": "node ./build-pkgs",
+    "prepare-structure": "npm run build:pkgs && npm run cp:giver && npm run cp:multisig",
+    "example:base": "npm run prepare-structure && jest -- base.test.ts",
+    "example:reset": "npm run prepare-structure && jest -- reset.test.ts",
+    "example:many-timers": "npm run prepare-structure && jest -- many-timers.test.ts",
+    "example:long": "npm run prepare-structure && jest -- long.test.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ton-client-ts/node": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.9",
+    "jest": "^26.6.3",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.2"
+  }
+}
